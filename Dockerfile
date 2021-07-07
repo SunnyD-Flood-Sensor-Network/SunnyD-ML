@@ -43,11 +43,11 @@ RUN /opt/conda/bin/conda install tensorflow keras pillow && \
 ENV RETICULATE_PYTHON /opt/conda/bin/python
     
 # install packages
-RUN install2.r plumber tensorflow keras magick
+RUN install2.r plumber tensorflow keras magick dplyr
 
 RUN groupadd -r plumber && useradd --no-log-init -r -g plumber plumber
 
-ADD ml/MN2_model_TB home/plumber/ml/MN2_model_TB
+ADD ml/Rmodel_6_23_2021 home/plumber/ml/Rmodel_6_23_2021
 ADD plumber.R /home/plumber/plumber.R
 ADD entrypoint.R /home/plumber/entrypoint.R
 
